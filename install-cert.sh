@@ -24,5 +24,6 @@ if [ -z ${JAVA_HOME} ]; then
   exit 1
 fi
 
-sudo key tool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -keystore "${JAVA_HOME}/lib/security/cacerts" -storepass ${PASSWORD}
+echo "NB - If a password prompt it appears it is to grant sudo privileges so this script can modify the JVM key store"
+sudo keytool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -keystore "${JAVA_HOME}/lib/security/cacerts" -storepass ${PASSWORD}
 
