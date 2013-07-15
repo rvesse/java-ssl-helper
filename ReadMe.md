@@ -30,9 +30,9 @@ Also note that the script assumes a Mac OS X based JVM which used the key store 
 
 # License
 
-These scripts are in part based upon scripts by Paul Heinlein found in the [OpenSSL Command-Line HOW TO][1] which is under a [CC-BY-NC-SA][2]
+These scripts are in part based upon scripts by Paul Heinlein found in the [OpenSSL Command-Line HOW TO][1] which is under a [CC-BY-NC-SA][2] license.
 
-Therefore these scripts are also licensed to you under [CC-BY-NC-SA][2] license, please attribute Paul and myself (Rob Vesse) in any downstream projects.
+Therefore these scripts are also licensed to you under the [CC-BY-NC-SA][2] license, please attribute Paul and myself (Rob Vesse) in any downstream projects.
 
 [1]: http://www.madboa.com/geek/openssl/#cert-retrieve
 [2]: http://creativecommons.org/licenses/by-nc-sa/3.0/
