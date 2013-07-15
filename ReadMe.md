@@ -12,7 +12,7 @@ Firstly you need to run the `grab-cert.sh` script to obtain the certificate key:
 
     ./grab-cert.sh host > example.cert
 
-If the host is using SSL on the non-standard port (443) you can specify it like so:
+If the host is using SSL on a non-standard port (the default is 443) you can specify it like so:
 
     ./grab-cert.sh host 1234 > example.cert
 
