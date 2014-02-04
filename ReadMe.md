@@ -22,11 +22,15 @@ After this script has run then you can the `install-cert.sh` script to install a
 
     ./install-cert.sh example.cert my-key
 
-This will attempt to install the key containing in `example.cert` into your JVM key store under the alias `my-key`.  Note that this requires `sudo` because typically the JVM key store is in an area of the file system owned by root so you may receive a password prompt to grant sudo privileges.
+This will attempt to install the key containing in `example.cert` into your system JVM key store under the alias `my-key`.  Note that this requires `sudo` because typically the JVM key store is in an area of the file system owned by root so you may receive a password prompt to grant sudo privileges.
 
 Also note that the script assumes a Mac OS X based JVM which used the key store password of `changeit`, this may vary by OS and JVM so you can specify the key store password like so:
 
     ./install-cert.sh example.cert my-key password
+
+Alternatively if you don't have `sudo` privileges on the system you are trying to install the key on then you can use the `install-vert-local.sh` script instead which only installs the key to your local `.keystore` file which will be in your home directory e.g.
+
+    ./install-cert-local.sh example.cert my-key
 
 # License
 
