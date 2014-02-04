@@ -28,7 +28,7 @@ Also note that the script assumes a Mac OS X based JVM which used the key store 
 
     ./install-cert.sh example.cert my-key password
 
-Alternatively if you don't have `sudo` privileges on the system you are trying to install the key on then you can use the `install-vert-local.sh` script instead which only installs the key to your local `.keystore` file which will be in your home directory e.g.
+Alternatively if you don't have `sudo` privileges on the system you are trying to install the key on then you can use the `install-cert-local.sh` script instead which only installs the key to your local `.keystore` file which will be in your home directory e.g.
 
     ./install-cert-local.sh example.cert my-key
 
