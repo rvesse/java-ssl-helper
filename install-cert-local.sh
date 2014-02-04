@@ -2,9 +2,8 @@
 #
 # Usage is install-cert.sh file.cert alias [password]
 #
-# Installs a certificate into the system keystone which requires sudo, use the
-# install-cert-local.sh if you don't have sudo privileges or only want to modify
-# your local keystore
+# Installs a certificate in your local keystore which should not require sudo
+# privileges to modify
 #
 # If no password specified the default "changeit" is assumed
 # This is correct for OS X with the standard JVM installed but may vary by OS and JVM
@@ -28,6 +27,5 @@ if [ -z ${JAVA_HOME} ]; then
   exit 1
 fi
 
-echo "NB - If a password prompt it appears it is to grant sudo privileges so this script can modify the JVM key store"
-sudo keytool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -keystore "${JAVA_HOME}/lib/security/cacerts" -storepass ${PASSWORD}
+keytool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -storepass ${PASSWORD}
 
