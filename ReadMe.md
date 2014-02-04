@@ -1,6 +1,6 @@
 # Java SSL Helper
 
-A pair of scripts to help configuring Java to trust a self-signed SSL certificate.
+A set of scripts to help configuring Java to trust a self-signed SSL certificate.
 
 This is commonly necessary in development environments and the procedure is arcane enough that I wrote these scripts to automate the process.
 
