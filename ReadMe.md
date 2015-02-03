@@ -18,13 +18,13 @@ If the host is using SSL on a non-standard port (the default is 443) you can spe
 
 ### Installing and Trusting the Certificate
 
-After this script has run then you can the `install-cert.sh` script to install and trust the certificate key:
+After this script has run you can then run the `install-cert.sh` script to install and trust the certificate key:
 
     ./install-cert.sh example.cert my-key
 
 This will attempt to install the key containing in `example.cert` into your system JVM key store under the alias `my-key`.  Note that this requires `sudo` because typically the JVM key store is in an area of the file system owned by root so you may receive a password prompt to grant sudo privileges.
 
-Also note that the script assumes a Mac OS X based JVM which used the key store password of `changeit`, this may vary by OS and JVM so you can specify the key store password like so:
+Also note that the script assumes a Mac OS X based JVM which uses a key store password of `changeit`, this may vary by OS and JVM (for example some installations use `changeme` as a password) so you can specify the key store password like so:
 
     ./install-cert.sh example.cert my-key password
 
