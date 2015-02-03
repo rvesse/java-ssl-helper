@@ -27,5 +27,6 @@ if [ -z ${JAVA_HOME} ]; then
   exit 1
 fi
 
+set +x
 keytool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -storepass ${PASSWORD}
 
