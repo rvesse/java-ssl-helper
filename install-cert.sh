@@ -28,6 +28,8 @@ if [ -z ${JAVA_HOME} ]; then
   exit 1
 fi
 
-echo "NB - If a password prompt it appears it is to grant sudo privileges so this script can modify the JVM key store"
+# Actually install the key into the key store
+echo "NB - If a password prompt appears it is in order to grant sudo privileges so this script can modify the JVM key store which typically lives in a system directory owned by root"
+set +x
 sudo keytool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -keystore "${JAVA_HOME}/lib/security/cacerts" -storepass ${PASSWORD}
 
