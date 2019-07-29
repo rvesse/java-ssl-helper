@@ -6,6 +6,22 @@ This is commonly necessary in development environments and the procedure is arca
 
 ## Script Usage
 
+### Build
+
+Some of these scripts require some additional artifacts to be built first, run `prepDockerImage.sh` to build these.  This will include created a Docker image that can be deployed in a container orchestration environment e.g. Kubernetes to debug SSL in cloud environments.
+
+### Testing whether Java can connect to a URL
+
+To check whether you need to do anything you can first use `runJavaTest.sh` to try connecting to the URL of interest e.g.
+
+    ./runJavaTest.sh http://example.org
+    
+If this succeeds then you will get a simple message like so:
+
+    Successfully read 1,270 bytes from URL
+    
+If this fails a giant stack trace will get dumped.
+
 ### Obtaining the Certificate Key
 
 Firstly you need to run the `grab-cert.sh` script to obtain the certificate key:
