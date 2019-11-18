@@ -28,8 +28,26 @@ if [ -z ${JAVA_HOME} ]; then
   exit 1
 fi
 
+# Determine where the Keystore file is
+# Depending on the OS and the install this might be in a couple
+# of different places under JAVA_HOME
+KEYSTORE=
+if [ -f "${JAVA_HOME}/lib/security/cacerts" ]; then
+  KEYSTORE="${JAVA_HOME}/lib/security/cacerts"
+elif [ -f "${JAVA_HOME}/jre/lib/security/cacerts" ]; then
+  KEYSTORE="${JAVA_HOME}/jre/lib/security/cacerts"
+fi
+
+if [ -z "${KEYSTORE}" ]; then
+  echo "Unable to find JVM Key store, are you sure JAVA_HOME is set correctly?"
+  exit 1
+fi
+
 # Actually install the key into the key store
 echo "NB - If a password prompt appears it is in order to grant sudo privileges so this script can modify the JVM key store which typically lives in a system directory owned by root"
 set +x
-sudo keytool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -keystore "${JAVA_HOME}/lib/security/cacerts" -storepass ${PASSWORD}
+sudo keytool -import -noprompt -trustcacerts -alias ${ALIAS} -file ${CERT} -keystore "${KEYSTORE}" -storepass ${PASSWORD}
+if [ $? -ne 0 ]; then
+  exit 1
+fi
 
