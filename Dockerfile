@@ -1,6 +1,6 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:11-jre-slim
 
-RUN apk add --no-cache curl openssl bash sudo
+RUN apt-get update && apt-get install -y curl openssl bash sudo
 
 RUN mkdir -p /opt/java/ssl-helper/classes/ && chmod -R 0755 /opt/java/ssl-helper
 COPY *.sh /opt/java/ssl-helper/

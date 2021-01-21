@@ -22,7 +22,7 @@ If this succeeds then you will get a simple message like so:
     
 If this fails a giant stack trace will get dumped.
 
-### Obtaining the Certificate Key
+### Obtaining the Certificate
 
 Firstly you need to run the `grab-cert.sh` script to obtain the certificate key:
 
@@ -31,6 +31,14 @@ Firstly you need to run the `grab-cert.sh` script to obtain the certificate key:
 If the host is using SSL on a non-standard port (the default is 443) you can specify it like so:
 
     ./grab-cert.sh host 1234 > example.cert
+    
+### Viewing the Certificate
+
+You can use the `view-cert.sh` script to display a certificate in plain text:
+
+    ./view-cert example.cert
+    
+This can be useful to verify whether the SSL certificate is as expected e.g. has relevant Subject Alternative Names, Issuer etc.
 
 ### Installing and Trusting the Certificate
 
